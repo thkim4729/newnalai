@@ -1,4 +1,119 @@
 @charset "UTF-8";
+/* box-sizing 규칙을 명시합니다. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 폰트 크기의 팽창을 방지합니다. */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* 기본 여백을 제거하여 작성된 CSS를 더 잘 제어할 수 있습니다. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* list를 role값으로 갖는 ul, ol 요소의 기본 목록 스타일을 제거합니다. */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 핵심 body의 기본값을 설정합니다. */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* 제목 요소와 상호작용하는 요소에 대해 line-height를 더 짧게 설정합니다. */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* 제목에 대한 text-wrap을 balance로 설정합니다. */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* 클래스가 없는 기본 a 태그 요소는 기본 스타일을 가져옵니다. */
+a {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  text-decoration: none;
+}
+
+/* 이미지 관련 작업을 더 쉽게 합니다. */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* input 및 button 항목들이 글꼴을 상속하도록 합니다. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 행 속성이 없는 textarea가 너무 작지 않도록 합니다. */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* 고정된 모든 항목에는 여분의 스크롤 여백이 있어야 합니다. */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  --colors-white: #ffffff;
+  --colors-gray-100: #e0e0e0;
+  --colors-gray-200: #c5c5c5;
+  --colors-gray-300: #cacaca;
+  --colors-gray-400: #c0c0c0;
+  --colors-gray-500: #a6a6a6;
+  --colors-gray-600: #1a1a1a;
+  --colors-black: #000000;
+}
+
+.font-normal {
+  font-weight: 400 !important;
+}
+.font-medium {
+  font-weight: 500 !important;
+}
+.font-semibold {
+  font-weight: 600 !important;
+}
+.font-bold {
+  font-weight: 700 !important;
+}
+
 /**
   px값 List를 만들어주는 함수입니다.
 */
@@ -4066,44 +4181,187 @@ mt-1 : { margin-top : 1px; }
   padding-bottom: 100px;
 }
 
+/* font-setting mixin */
+/* flex mixin */
+body {
+  font-family: "Pretendard";
+  background-color: var(--colors-black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+dl,
+dd {
+  color: var(--colors-white);
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+header .button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+section {
+  background-color: var(--colors-black);
+}
+
+.section-title, .section-description {
+  color: var(--colors-white);
+  text-align: center;
+}
+.section-title.sub {
+  color: var(--colors-gray-200);
+}
+.section-list ul li {
+  background-color: var(--colors-gray-600);
+}
+.section-list--title {
+  background: linear-gradient(95deg, #97f9ef -1.11%, #4191f0 69.4%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-list--description {
+  color: var(--colors-gray-100);
+}
+.section-list--link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colors-gray-100);
+}
+.section-list--link:after {
+  content: "";
+  background: url(/assets/images/icon/solar_arrow-up-linear.svg) no-repeat center/cover;
+  width: 22px;
+  height: 22px;
+  margin-left: 6px;
+}
+
 .navbar-2 {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-color: #000000;
+  background-color: var(--colors-black);
 }
 
 .contact {
-  background: linear-gradient(180deg, rgba(0, 35, 155, 0) 0%, #00239b 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 35%, #00239b 100%);
 }
-
+.contact-box + .contact-box {
+  margin-top: 44px;
+}
 .contact-button {
   width: initial;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
-  background-color: #000000;
-  border: 1px solid #ffffff;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--colors-white);
 }
-
 .contact-text {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
-  color: #c0c0c0;
+  color: var(--colors-gray-400);
   text-align: center;
 }
-
 .contact-title {
   font-weight: 700;
-  color: #ffffff;
+  color: var(--colors-white);
   text-align: center;
 }
 
 @media screen and (max-width: 479px) {
-  .navbar-2 {
+  header {
     height: 78px;
     padding: 0 16px;
+  }
+  header .contact-button {
+    width: 104px;
+    height: 34px;
+    padding: 0 20px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  section {
+    padding: 0 26px;
+  }
+  section.full {
+    padding: 0;
+  }
+  section ~ section {
+    margin-top: 130px;
+  }
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.28px;
+  }
+  .section-title.sub {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 2.65;
+  }
+  .section-description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 30px;
+    padding-bottom: 20px;
+  }
+  .section-list {
+    margin-top: 40px;
+  }
+  .section-list ul li {
+    padding: 24px;
+  }
+  .section-list ul li ~ li {
+    margin-top: 20px;
+  }
+  .section-list--title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: initial;
+    letter-spacing: -0.32px;
+  }
+  .section-list--description {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 12px;
+  }
+  .section-list--link {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 20px;
+  }
+  .logo {
+    width: 116px;
   }
   .contact-button {
     padding: 0 20px;
@@ -4124,27 +4382,37 @@ mt-1 : { margin-top : 1px; }
   .contact {
     padding-bottom: 0;
   }
-  .contact .contact-title {
+  .contact-title {
     font-size: 36px;
-    font-weight: 700;
     line-height: initial;
-    color: #ffffff;
+    margin-top: 18px;
     margin-bottom: 36px;
   }
-  .contact .contact-text {
+  .contact-text {
     font-size: 8px;
-    font-weight: 500;
     line-height: initial;
-    color: #c0c0c0;
-    margin-bottom: 18px;
+    margin-bottom: 0;
   }
-  .contact .contact-button {
+  .contact-button {
     font-size: 16px;
-    font-weight: 700;
     line-height: 1.5;
-    color: #ffffff;
     height: 44px;
     padding: 0 24px;
+  }
+  .contact-logo {
+    width: 100%;
+  }
+  .contact-logo.small {
+    width: 96px;
+    margin: 0 auto;
+  }
+  .contact .button-wrap {
+    width: 100%;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  .contact .contact-button {
+    width: 132px;
+    margin: 0 auto;
   }
 }
