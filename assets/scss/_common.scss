@@ -1,0 +1,102 @@
+.navbar-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-black;
+}
+
+.contact {
+  background: linear-gradient(180deg, rgba(0, 35, 155, 0) 0%, #00239b 100%);
+}
+
+.contact-button {
+  width: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-black;
+  border: 1px solid $color-white;
+}
+.menu-button {
+}
+.contact-text {
+  @include typography(
+    $font-size: 12px,
+    $font-weight: 500,
+    $line-height: 1.5,
+    $color: $color-lightgray,
+    $text-align: center
+  );
+}
+.contact-title {
+  @include typography(
+    $font-weight: 700,
+    $color: $color-white,
+    $text-align: center
+  );
+}
+
+@media screen and (max-width: 991px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 479px) {
+  .navbar-2 {
+    height: 78px;
+    padding: 0 16px;
+  }
+  .contact-button {
+    padding: 0 20px;
+    height: 34px;
+  }
+  .menu-button {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    padding: 0;
+
+    &.w--open {
+      padding-left: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .contact {
+    padding-bottom: 0;
+
+    .contact-title {
+      @include typography(
+        $font-size: 36px,
+        $font-weight: 700,
+        $line-height: initial,
+        $color: $color-white
+      );
+      margin-bottom: 36px;
+    }
+
+    .contact-text {
+      @include typography(
+        $font-size: 8px,
+        $font-weight: 500,
+        $line-height: initial,
+        $color: $color-lightgray
+      );
+      margin-bottom: 18px;
+    }
+
+    .contact-button {
+      @include typography(
+        $font-size: 16px,
+        $font-weight: 700,
+        $line-height: 1.5,
+        $color: $color-white
+      );
+      height: 44px;
+      padding: 0 24px;
+      margin-bottom: 20px;
+    }
+  }
+}
