@@ -2,7 +2,10 @@
 <html lang="en" data-wf-domain="www.newnal.com">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, width=device-width, viewport-fit=cover"
+    />
     <title>Newnal ai</title>
     <!-- <link
       href="https://cdn.prod.website-files.com/659b8407b53dc2c262ed98e2/css/newnal-dev.webflow.d956244dc.min.css"
@@ -11,6 +14,11 @@
     /> -->
     <link href="/assets/css/base.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -27,6 +35,8 @@
       type="text/javascript"
     ></script> -->
     <script src="/js/webflow.js" type="text/javascript"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="/js/swiper-bundle.min.js"></script>
   </head>
   <body data-scroll-time="0" class="body-2">
     <div class="w-embed">
@@ -73,19 +83,13 @@
           />
         </a>
         <nav role="navigation" class="nav-menu w-nav-menu">
-          <a href="#mission" class="link-10 long">Newnal&#x27;s Mission</a>
-          <div
-            data-hover="true"
-            data-delay="0"
-            data-w-id="8543104c-7338-d6e8-bcc6-9166753c3bb7"
-            class="dropdown w-dropdown"
-          >
+          <a href="#unlimitedAI" class="link-10 long">unlimitedAI</a>
+          <div data-delay="0" class="dropdown w-dropdown">
             <div class="dropdown-toggle-3 w-dropdown-toggle">
               <div class="div-block-1054">
                 <div class="text-block-40">
                   Newnal<strong class="bold-text-85">ai</strong>
                 </div>
-                <div class="icon-2 w-icon-dropdown-toggle"></div>
               </div>
             </div>
             <nav class="dropdown-list-3 w-dropdown-list">
@@ -99,6 +103,10 @@
                 How is Newnal
                 <strong class="bold-text-67">ai</strong> created?
               </a>
+              <a href="#who" class="dropdown-link-3 w-dropdown-link">
+                Who creates Newnal?
+                <strong class="bold-text-67">ai</strong> created?
+              </a>
             </nav>
           </div>
           <div class="div-block-1046">
@@ -107,13 +115,14 @@
             </div>
             <a href="#what" class="link-10-copy">What’s Web3 AI, Newnal?</a>
             <a href="#why" class="link-10-copy">Why Newnal? </a>
-            <a href="#how" class="link-10-copy"> How is Newnal Created? </a>
+            <a href="#how" class="link-10-copy">How is Newnal Created?</a>
             <a href="#differentiation" class="link-10-copy">
               Newnal AI’s Differentiation
             </a>
+            <a href="#who" class="link-10-copy">Who creates Newnal?</a>
           </div>
-          <a href="#usecases" class="link-10">Use Cases</a
-          ><a href="#products" class="link-10">Products</a>
+          <a href="#usecases" class="link-10">Use Cases</a>
+          <a href="#products" class="link-10">Products</a>
         </nav>
         <div class="button-wrap">
           <a
@@ -132,156 +141,32 @@
         </div>
       </div>
     </header>
-    <!-- <section id="mission" class="prologue">
+    <section id="unlimitedAI" class="prologue">
       <div class="usecase_container prologue">
         <div class="div-block-1041">
-          <div class="heading-black-copy grey">
-            Newnal&#x27;s <br />Mission<br />
-          </div>
-          <div class="div-block-1053">
-            <div class="story-text_mobile">
-              <div class="prologue_paragraph">
-                Generative AIs like ChatGPT cannot learn from your data because
-                they cannot access data from all of your devices and services
-                like Apple, Google, Facebook, Netflix, Amazon, and Chase Bank.
-              </div>
-              <div class="prologue_paragraph">
-                But imagine if you could gather all of your data to create your
-                own <strong class="bold-text-92">ai</strong> - based on your
-                personality and preferences, and capable of optimizing your
-                decisions. It would enhance your life in practical and concrete
-                ways.
-              </div>
-              <div class="text-19">
-                <span class="prologue_paragraph"
-                  >Yet building your own
-                  <strong class="bold-text-92">ai</strong> comes with
-                  challenges.</span
-                >
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  To begin, how can personal data scattered across countless
-                  servers, each holding it in diverse forms and formats, be
-                  retrieved?
-                </div>
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  Once retrieved, by what criteria will the data be classified,
-                  integrated and labeled for optimal
-                  <strong class="bold-text-82">ai</strong> training?
-                </div>
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  And if all your aggregated data is stored on a company’s
-                  server or cloud, how can the risk of it being exposed in a
-                  single security breach be prevented?
-                </div>
-              </div>
-              <div class="prologue_paragraph">
-                Let us share our efforts since 2013 to overcome these
-                challenges, leading to the development of Newnal
-                <strong class="bold-text-91">ai</strong>.
-              </div>
-            </div>
-            <div class="story-text_desktop">
-              <div class="prologue_paragraph">
-                Generative AIs like ChatGPT cannot learn from your data because
-                they cannot access data from all of your devices and services
-                like Apple, Google, Facebook, Netflix, Amazon, and Chase Bank.
-              </div>
-              <div class="prologue_paragraph">
-                But imagine if you could gather all of your data to create your
-                own <strong class="bold-text-82">ai</strong> - based on your
-                personality and preferences, and capable of optimizing your
-                decisions. It would enhance your life in practical and concrete
-                ways.<br />
-              </div>
-              <div class="text-19">
-                <span class="prologue_paragraph"
-                  >Yet building your own
-                  <strong class="bold-text-92">ai</strong> comes with
-                  challenges.</span
-                >
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  To begin, how can personal data scattered across countless
-                  servers,<br />each holding it in diverse forms and formats, be
-                  retrieved? 
-                </div>
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  Once retrieved, by what criteria will the data be
-                  classified,<br />integrated and labeled for optimal
-                  <strong class="bold-text-82">ai</strong> training?
-                </div>
-              </div>
-              <div class="prologue_question">
-                <div
-                  class="how-can-personal-data-scattered-across-various-company-servers-in-different-means-and-formats-be-collected"
-                >
-                  And if all your aggregated data is stored on a company’s
-                  server or cloud,<br />how can the risk of it being exposed in
-                  a single security breach be prevented?
-                </div>
-              </div>
-              <div class="prologue_paragraph">
-                Let us share our efforts since 2013 to overcome these
-                challenges,<br />leading to the development of Newnal
-                <strong class="bold-text-82">ai</strong>.
-              </div>
-            </div>
-            <div class="div-block-1057">
-              <div class="text-block-44">Founder</div>
-              <img
-                src="https://cdn.prod.website-files.com/659b8407b53dc2c262ed98e2/66593a60e58b67972cd70521_YT%20KIM.png"
-                loading="lazy"
-                width="136.5"
-                alt=""
-                class="image-181"
-              />
-            </div>
-            <div class="div-block-1056">
-              <div class="prologue_paragraph-copy">*</div>
-              <div class="prologue_paragraph-copy">
-                <strong class="bold-text-95">Newnal</strong> is a blend of
-                &#x27;New&#x27; and &#x27;nal,&#x27; which signifies era or tool
-                in Korean, meaning the dawn of a novel paradigm, a new era, and
-                a new tool.
-              </div>
-            </div>
-          </div>
+          <div class="heading-black-copy grey">unlimited<br />AI</div>
         </div>
       </div>
-    </section> -->
+    </section>
     <section id="what" class="">
       <div class="section-title">
-        What’s<br />
-        Web3 AI, Newnal?
+        What’s<br class="mo" />
+        Web3 AI,<br class="pc" />
+        Newnal?
       </div>
       <div class="section-description">
         Newnal consists of <span class="font-bold">Newnal ai</span>, which
-        learns based on user data, and <span class="font-bold">Newnal OS</span>,
+        learns<br class="pc" />
+        based on user data, and <span class="font-bold">Newnal OS</span>,
+        <br class="pc" />
         an AI-dedicated operating system.
       </div>
       <div class="section-list">
         <ul>
           <li>
-            <div class="section-list--title">Personalized AI</div>
+            <div class="section-list--title">
+              <em>Personalized AI</em>
+            </div>
             <div class="section-list--description">
               Unlike traditional AI models trained on public data, Newnal AI
               learns from the user’s personal data to generate responses and
@@ -289,7 +174,9 @@
             </div>
           </li>
           <li>
-            <div class="section-list--title">Hybrid OS</div>
+            <div class="section-list--title">
+              <em>Hybrid OS</em>
+            </div>
             <div class="section-list--description">
               Compatible with all software, including iOS and Android OS,
               allowing integration into nearly any device, such as smartphones,
@@ -297,14 +184,18 @@
             </div>
           </li>
           <li>
-            <div class="section-list--title">Data Tracking</div>
+            <div class="section-list--title">
+              <em>Data Tracking</em>
+            </div>
             <div class="section-list--description">
               Provides complete transparency by displaying the personal data
               that served as a basis for the AI’s responses and actions.
             </div>
           </li>
           <li>
-            <div class="section-list--title">Appless Environment</div>
+            <div class="section-list--title">
+              <em>Appless Environment</em>
+            </div>
             <div class="section-list--description">
               Moving beyond the conventional app-based ecosystem, AI handles all
               tasks including content creation, shopping, payments,
@@ -312,7 +203,9 @@
             </div>
           </li>
           <li>
-            <div class="section-list--title">Web3 Telecom</div>
+            <div class="section-list--title">
+              <em>Web3 Telecom</em>
+            </div>
             <div class="section-list--description">
               Ensures complete privacy protection while allowing AI to handle
               calls and relay necessary information to the recipient based on
@@ -320,7 +213,9 @@
             </div>
           </li>
           <li>
-            <div class="section-list--title">Blockchain Security</div>
+            <div class="section-list--title">
+              <em>Blockchain Security</em>
+            </div>
             <div class="section-list--description">
               Secures all personal data using Web3-based decentralized storage
               technology, with real-time blockchain verification to ensure data
@@ -335,28 +230,36 @@
       <div class="section-list">
         <ul>
           <li>
-            <div class="section-list--title">AI That Supports Your Life</div>
+            <div class="section-list--title">
+              <em>AI That Supports Your Life</em>
+            </div>
             <div class="section-list--description">
               Learns from personal data to provide a tailored AI that reflects
               individual traits and preferences.
             </div>
           </li>
           <li>
-            <div class="section-list--title">Personal Data Ownership</div>
+            <div class="section-list--title">
+              <em>Personal Data Ownership</em>
+            </div>
             <div class="section-list--description">
               Protects user data and ensures ownership remains within the
               individual.
             </div>
           </li>
           <li>
-            <div class="section-list--title">Environmental Sustainability</div>
+            <div class="section-list--title">
+              <em>Environmental Sustainability</em>
+            </div>
             <div class="section-list--description">
               Enables AI learning without relying on large data centers or
               excessive power consumption, reducing carbon emission.
             </div>
           </li>
           <li>
-            <div class="section-list--title">Strong AI Ethics</div>
+            <div class="section-list--title">
+              <em>Strong AI Ethics</em>
+            </div>
             <div class="section-list--description">
               Enables blockchain-based verification of personal data
               authenticity, preventing deepfake AI and data manipulation while
@@ -371,38 +274,62 @@
       <div class="section-list">
         <ul>
           <li>
-            <div class="section-list--title">Web3 ai</div>
+            <div class="section-list--title">
+              <em>Web3 ai</em>
+            </div>
             <div class="section-list--description">
               My AI Model That Learns from Personal Data.
             </div>
-            <a href="" class="section-list--link">
+            <a
+              href="https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-1-Web3-ai.pdf"
+              target="_blank"
+              class="section-list--link"
+            >
               Patent Number, Patent Title
             </a>
           </li>
           <li>
-            <div class="section-list--title">Web3 ai OS</div>
+            <div class="section-list--title">
+              <em>Web3 ai OS</em>
+            </div>
             <div class="section-list--description">
               An Appless OS That Removes the Need to Manually Run Apps.
             </div>
-            <a href="" class="section-list--link">
+            <a
+              href="https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-2-Web3-ai-OS.pdf"
+              target="_blank"
+              class="section-list--link"
+            >
               Patent Number, Patent Title
             </a>
           </li>
           <li>
-            <div class="section-list--title">Web3 Telecom</div>
+            <div class="section-list--title">
+              <em>Web3 Telecom</em>
+            </div>
             <div class="section-list--description">
               A New, Secure Communication Protocol Including AI-Managed Calls.
             </div>
-            <a href="" class="section-list--link">
+            <a
+              href="https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-3-Web3-Telecom.pdf"
+              target="_blank"
+              class="section-list--link"
+            >
               Patent Number, Patent Title
             </a>
           </li>
           <li>
-            <div class="section-list--title">InfraBlockchain</div>
+            <div class="section-list--title">
+              <em>InfraBlockchain</em>
+            </div>
             <div class="section-list--description">
               The World's Only Public Blockchain That Operates Without Coins.
             </div>
-            <a href="" class="section-list--link">
+            <a
+              href="https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-4-InfraBlockchain.pdf"
+              target="_blank"
+              class="section-list--link"
+            >
               Patent Number, Patent Title
             </a>
           </li>
@@ -412,13 +339,533 @@
     <section id="differentiation" class="">
       <div class="section-title">Newnal AI’s Differentiation</div>
       <div class="section-title sub">(vs. Existing AI Services)</div>
+      <div class="table">
+        <table>
+          <colgroup>
+            <col width="auto" />
+            <col width="50%" />
+            <col width="50%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th><p class="blind">Category</p></th>
+              <th scope="col">
+                <p class="table-title sub">Existing AI</p>
+                <p class="table-description">(ChatGPT etc.)</p>
+              </th>
+              <th scope="col">
+                <p class="table-title">
+                  <em>Newnal<br />AI</em>
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">How it Learns</th>
+              <td class="past">Trains on publicly available web data</td>
+              <td class="present">Learns from user’s personal data</td>
+            </tr>
+            <tr>
+              <th scope="row">Personalization</th>
+              <td class="past">Provides generic responses</td>
+              <td class="present">
+                Delivers answers tailored to user traits and habits
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Security</th>
+              <td class="past">Centralized server-based storage</td>
+              <td class="present">Uses blockchain and private</td>
+            </tr>
+            <tr>
+              <th scope="row"><p>AI Decision Transparency</p></th>
+              <td class="past">Impossible</td>
+              <td class="present">
+                Provides reasons and data sources for AI decisions
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
-    <section id="products" class=""></section>
+    <section id="who" class="">
+      <div class="section-title">Who creates Newnal?</div>
+      <div class="section-category">
+        <ul>
+          <li>
+            <div class="section-category--title">
+              <em>Decision-making group</em>
+            </div>
+            <div class="section-category--accordion">
+              <div class="accordionContainer single">
+                <div class="accordionBox on">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard1-1"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_01.png"
+                            alt="YT Kim profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">YT Kim</div>
+                          <div class="text-position">founder / CCO</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent1-1" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="YT Kim image"
+                      />
+                    </div>
+                    <div class="text-box">
+                      He created the blockchain-based vaccine pass "COOV," which
+                      was used by 43 million people in South Korea during the
+                      COVID-19 pandemic, proving that large-scale Web3 services
+                      are possible.
+                      <br />
+                      <br />
+                      He believes that the future will not be dominated by
+                      public AI as it is today but by personalized AI. With this
+                      belief, he conceptualized Another-I, a new form of AI that
+                      focuses on individuality.
+                      <br />
+                      <br />
+                      He established the principles of what personal data is
+                      necessary and how it should be integrated for AI to
+                      generate a person’s unique thoughts, speech, and behavior
+                      both rationally and emotionally.
+                      <br />
+                      He studied Theater Directing at Dongguk University, one of
+                      South Korea's top drama schools. He applied the core
+                      humanities-based mechanisms of "character building" and
+                      "role creation" from his studies to the development of
+                      Another-I.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard1-2"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_02.png"
+                            alt="Bezalel Lim profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Bezalel Lim</div>
+                          <div class="text-position">co-founder / CTO</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent1-2" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Bezalel Lim image"
+                      />
+                    </div>
+                    <div class="text-box">
+                      He created the blockchain-based vaccine pass "COOV," which
+                      was used by 43 million people in South Korea during the
+                      COVID-19 pandemic, proving that large-scale Web3 services
+                      are possible. <br /><br />
+                      He believes that the future will not be dominated by
+                      public AI as it is today but by personalized AI. With this
+                      belief, he conceptualized Another-I, a new form of AI that
+                      focuses on individuality.
+                      <br /><br />
+                      He established the principles of what personal data is
+                      necessary and how it should be integrated for AI to
+                      generate a person’s unique thoughts, speech, and behavior
+                      both rationally and emotionally.
+                      <br />
+                      He studied Theater Directing at Dongguk University, one of
+                      South Korea's top drama schools. He applied the core
+                      humanities-based mechanisms of "character building" and
+                      "role creation" from his studies to the development of
+                      Another-I.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard1-3"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_03.png"
+                            alt="Joe Park profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Joe Park</div>
+                          <div class="text-position">co-founder / CPO</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent1-3" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Joe Park image"
+                      />
+                    </div>
+                    <div class="text-box">
+                      He created the blockchain-based vaccine pass "COOV," which
+                      was used by 43 million people in South Korea during the
+                      COVID-19 pandemic, proving that large-scale Web3 services
+                      are possible.
+                      <br />
+                      <br />
+                      He believes that the future will not be dominated by
+                      public AI as it is today but by personalized AI. With this
+                      belief, he conceptualized Another-I, a new form of AI that
+                      focuses on individuality.
+                      <br />
+                      <br />
+                      He established the principles of what personal data is
+                      necessary and how it should be integrated for AI to
+                      generate a person’s unique thoughts, speech, and behavior
+                      both rationally and emotionally.
+                      <br />
+                      He studied Theater Directing at Dongguk University, one of
+                      South Korea's top drama schools. He applied the core
+                      humanities-based mechanisms of "character building" and
+                      "role creation" from his studies to the development of
+                      Another-I.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="section-category--title">
+              <em>Board Members</em>
+            </div>
+            <div class="section-category--accordion">
+              <div class="accordionContainer single">
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard2-1"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="David Eun profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">David Eun</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent2-1" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="David Eun image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard2-2"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="Perry Ha profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Perry Ha</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent2-2" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Perry Ha image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard2-3"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="KW Park profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">KW Park</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent2-3" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="KW Park image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard2-4"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="박기석 profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">박기석</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent2-4" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="박기석 image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="section-category--title">
+              <em>Board Members</em>
+            </div>
+            <div class="section-category--accordion">
+              <div class="accordionContainer single">
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard3-1"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="Eugene Kim profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Eugene Kim</div>
+                          <div class="text-position">Director of AI</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent3-1" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Eugene Kim image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard3-2"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="Roy Lee profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Roy Lee</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent3-2" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Roy Lee image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard3-3"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="Elliot Kim profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Elliot Kim</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent3-3" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Elliot Kim image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard3-4"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="JW Ha profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">JW Ha</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent3-4" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="EJW Ha image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+                <div class="accordionBox">
+                  <div class="accordionTitle">
+                    <button
+                      type="button"
+                      id="accorCard3-5"
+                      class="accordionButton"
+                    >
+                      <div class="profile">
+                        <div class="img-box">
+                          <img
+                            src="/assets/images/img/profile_00.png"
+                            alt="Tim Shin profile image"
+                          />
+                        </div>
+                        <div class="text-box">
+                          <div class="text-name">Tim Shin</div>
+                          <div class="text-position">xxxxxxxxxx</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div id="accorCardContent3-5" class="accordionContent">
+                    <div class="img-box">
+                      <img
+                        src="/assets/images/img/img_001.png"
+                        alt="Tim Shin image"
+                      />
+                    </div>
+                    <div class="text-box"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
     <section id="team" class=""></section>
     <section id="contact" class="contact">
       <div class="contact-box">
         <p class="contact-text">
-          2025. Newnal Inc. & Blockchain Labs Inc.<br />
+          2025. Newnal Inc. &#38; Blockchain Labs Inc.<br />
           All Rights Reserved
         </p>
         <p class="contact-title">Contact Us.</p>

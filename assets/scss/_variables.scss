@@ -1,12 +1,18 @@
 :root {
   --colors-white: #ffffff;
-  --colors-gray-100: #e0e0e0;
-  --colors-gray-200: #c5c5c5;
-  --colors-gray-300: #cacaca;
-  --colors-gray-400: #c0c0c0;
-  --colors-gray-500: #a6a6a6;
-  --colors-gray-600: #1a1a1a;
+  --colors-gray-50: #fafafa;
+  --colors-gray-100: #e6e6e6;
+  --colors-gray-200: #e0e0e0;
+  --colors-gray-300: #c5c5c5;
+  --colors-gray-400: #cacaca;
+  --colors-gray-500: #c0c0c0;
+  --colors-gray-600: #a6a6a6;
+  --colors-gray-650: #a1a1aa;
+  --colors-gray-700: #707070;
+  --colors-gray-800: #292929;
+  --colors-gray-900: #1a1a1a;
   --colors-black: #000000;
+  --color-navy: #162b41;
 }
 .font {
   &-normal {
