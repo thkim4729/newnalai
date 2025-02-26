@@ -9,6 +9,20 @@ function headerUI() {
   }
 }
 
+function navUI() {
+  const header = document.querySelector("header");
+  // const nav = header.querySelector(".nav-menu");
+  const contact = header.querySelector(".contact-button");
+  const menu = header.querySelector(".menu-button");
+  console.log("🚀 ~ navUI ~ menu:", menu);
+
+  if (menu.classList.contains("w--open")) {
+    contact.style.display = "none";
+  } else {
+    contact.style.display = "flex";
+  }
+}
+
 function accordionUI() {
   /* accordion */
   // to-be 아코디언
@@ -181,7 +195,47 @@ function accordionUI() {
 
 function uiInit() {
   headerUI();
-  accordionUI();
+  handleResize(); // 초기화시 핸들러 실행
+  if (window.innerWidth < 768) {
+    navUI();
+    accordionUI();
+  }
+}
+
+function handleResize() {
+  const accordionButtons = document.querySelectorAll(".accordionButton");
+  if (window.innerWidth < 768) {
+    accordionUI();
+    accordionButtons.forEach((button) => {
+      button.removeAttribute("disabled");
+      button.removeAttribute("aria-disabled");
+    });
+  } else {
+    // 768px 이상일 때 아코디언 관련 이벤트 리스너 제거 및 초기화
+    const accordions = document.querySelectorAll(
+      ".accordionBox, .accordionContainer.single .accordionBox"
+    );
+    accordions.forEach((accordion) => {
+      const toggle = accordion.querySelector(".accordionButton");
+      const content = accordion.querySelector(".accordionContent");
+      if (toggle) {
+        if (toggle.accordionHandler) {
+          toggle.removeEventListener("click", toggle.accordionHandler);
+          delete toggle.accordionHandler;
+        }
+        if (toggle.accordionSingleHandler) {
+          toggle.removeEventListener("click", toggle.accordionSingleHandler);
+          delete toggle.accordionSingleHandler;
+        }
+        $(content).show(); // 768이상에서는 내용 보이게
+        accordion.classList.remove("on"); // on클래스 삭제
+        toggle.setAttribute("aria-expanded", "true"); // aria-expanded 초기화
+        toggle.setAttribute("disabled", "true");
+        toggle.setAttribute("aria-disabled", "true");
+      }
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", uiInit);
+window.addEventListener("resize", handleResize);
