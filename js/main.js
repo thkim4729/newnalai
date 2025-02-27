@@ -2,24 +2,55 @@ function headerUI() {
   const header = document.querySelector("header");
   const headerHeight = header.offsetHeight;
   const section = header.nextElementSibling;
+  const visual = document.querySelector(".visual");
+
   if (section && section.tagName === "SECTION") {
-    section.style.marginTop = headerHeight + "px";
+    // section.style.marginTop = headerHeight / 2 + "px";
+
+    if (window.innerWidth < 768) {
+      section.style.marginTop = headerHeight + "px";
+    }
   } else {
     console.log("header 바로 뒤에 div 요소가 없습니다.");
   }
+
+  // visual.style.height = `calc(100vh - ${parseInt(headerHeight)}px)`;
 }
 
 function navUI() {
   const header = document.querySelector("header");
-  // const nav = header.querySelector(".nav-menu");
   const contact = header.querySelector(".contact-button");
   const menu = header.querySelector(".menu-button");
-  console.log("🚀 ~ navUI ~ menu:", menu);
 
-  if (menu.classList.contains("w--open")) {
-    contact.style.display = "none";
-  } else {
-    contact.style.display = "flex";
+  // 초기 상태 설정
+  updateContactButtonVisibility();
+
+  // 메뉴 버튼 클릭 이벤트 리스너
+  menu.addEventListener("click", function () {
+    updateContactButtonVisibility();
+  });
+
+  // w--open 클래스 변경 감지 (MutationObserver 사용)
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.attributeName === "class") {
+        updateContactButtonVisibility();
+      }
+    });
+  });
+
+  observer.observe(menu, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  // 연락처 버튼 표시/숨김 함수
+  function updateContactButtonVisibility() {
+    if (menu.classList.contains("w--open")) {
+      contact.style.display = "none";
+    } else {
+      contact.style.display = "flex";
+    }
   }
 }
 
@@ -76,7 +107,13 @@ function accordionUI() {
             } else {
               accordion.classList.add("on");
               toggle.setAttribute("aria-expanded", "true");
-              $(content).stop().slideDown(300);
+              $(content)
+                .stop()
+                .slideDown(300, function () {
+                  // slideDown 완료 후 포커스 이동
+                  accordionBox.focus();
+                  window.scrollTo(0, $(accordionBox).offset().top - 92);
+                });
             }
           };
 
@@ -175,7 +212,11 @@ function accordionUI() {
                   .querySelector(".accordionContent")
               )
                 .stop()
-                .slideDown(300);
+                .slideDown(300, function () {
+                  // slideDown 완료 후 포커스 이동
+                  accordionBox.focus();
+                  window.scrollTo(0, $(accordionBox).offset().top - 92);
+                });
             }
           };
 
@@ -193,9 +234,149 @@ function accordionUI() {
   accordionSingle();
 }
 
+function swiperUI() {
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 8,
+    slidesPerView: "auto",
+    freeMode: true,
+    watchSlidesProgress: true,
+    a11y: true,
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        freeMode: false,
+        allowTouchMove: false,
+      },
+    },
+  });
+
+  var swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 0,
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+
+  const videoContainers = document.querySelectorAll(
+    ".kv , .swiper .video-container"
+  );
+
+  videoContainers.forEach((container) => {
+    const video = container.querySelector("video");
+
+    function createPlayPauseButton(container) {
+      const button = document.createElement("button");
+      button.classList.add("playPause", "play");
+      button.setAttribute("aria-label", "재생"); // 초기 aria-label 설정
+      container.insertAdjacentElement("beforeend", button);
+      return button;
+    }
+
+    const playPauseButton = createPlayPauseButton(container);
+
+    // CSS 트랜지션 추가
+    playPauseButton.style.transition = "opacity 0.5s ease-in-out";
+
+    // 자동 재생 설정 확인 및 버튼 상태 설정
+    if (video.autoplay) {
+      playPauseButton.classList.remove("play");
+      playPauseButton.classList.add("pause");
+      playPauseButton.style.opacity = 1;
+      playPauseButton.setAttribute("aria-label", "일시정지"); // 자동 재생 시 aria-label 변경
+    }
+
+    // .kv 클래스인 경우 버튼을 항상 보이게 설정
+    if (container.classList.contains("kv")) {
+      playPauseButton.style.opacity = 1;
+    }
+
+    playPauseButton.addEventListener("click", () => {
+      toggleVideoPlayback(video, playPauseButton);
+    });
+
+    // video 태그 클릭 이벤트 리스너 추가 (버튼 페이드 인/아웃)
+    video.addEventListener("click", () => {
+      // .kv 클래스가 아닌 경우에만 페이드 인/아웃 적용
+      if (!container.classList.contains("kv")) {
+        if (playPauseButton.style.opacity === "1") {
+          playPauseButton.style.opacity = 0;
+        } else if (
+          playPauseButton.style.opacity === "0" ||
+          playPauseButton.style.opacity === ""
+        ) {
+          playPauseButton.style.opacity = 1;
+        }
+      }
+    });
+
+    video.addEventListener("ended", () => {
+      playPauseButton.classList.remove("pause");
+      playPauseButton.classList.add("play");
+      // .kv 클래스가 아닌 경우에만 opacity 설정
+      if (!container.classList.contains("kv")) {
+        playPauseButton.style.opacity = 1;
+      }
+    });
+
+    function toggleVideoPlayback(video, playPauseButton) {
+      if (video.paused) {
+        video.play();
+        playPauseButton.classList.remove("play");
+        playPauseButton.classList.add("pause");
+        playPauseButton.setAttribute("aria-label", "일시정지"); // 재생 시 aria-label 변경
+        // .kv 클래스가 아닌 경우에만 setTimeout 적용
+        if (!container.classList.contains("kv")) {
+          setTimeout(() => {
+            playPauseButton.style.opacity = 0;
+          }, 3000);
+        }
+      } else {
+        video.pause();
+        playPauseButton.classList.remove("pause");
+        playPauseButton.classList.add("play");
+        playPauseButton.setAttribute("aria-label", "재생"); // 일시 정지 시 aria-label 변경
+        // .kv 클래스가 아닌 경우에만 opacity 설정
+        if (!container.classList.contains("kv")) {
+          playPauseButton.style.opacity = 1;
+        }
+      }
+    }
+  });
+
+  // 메인 슬라이더 변경 이벤트 리스너
+  swiper2.on("slideChange", () => {
+    pauseOtherVideos(swiper2.activeIndex);
+  });
+
+  // 썸네일 슬라이드 클릭 이벤트 리스너
+  swiper.on("click", (swiper, event) => {
+    swiper2.slideTo(swiper.clickedIndex);
+    pauseOtherVideos(swiper.clickedIndex);
+  });
+
+  // 다른 비디오 일시 정지 함수
+  function pauseOtherVideos(activeIndex) {
+    videoContainers.forEach((container, index) => {
+      const video = container.querySelector("video");
+      if (video && index !== activeIndex) {
+        video.pause();
+        const playPauseButton = container.querySelector(".playPause");
+        if (playPauseButton) {
+          playPauseButton.classList.remove("pause");
+          playPauseButton.classList.add("play");
+          playPauseButton.style.opacity = 1;
+        }
+      }
+    });
+  }
+}
+
 function uiInit() {
   headerUI();
   handleResize(); // 초기화시 핸들러 실행
+  swiperUI();
+
   if (window.innerWidth < 768) {
     navUI();
     accordionUI();
