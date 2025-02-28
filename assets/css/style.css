@@ -4306,6 +4306,11 @@ section.full {
 section.visual .video-container {
   height: 100%;
 }
+section.visual > .section-title {
+  font-size: 50px;
+  font-weight: 400;
+  color: var(--colors-white);
+}
 section.contact {
   margin-top: 300px;
 }
@@ -4420,7 +4425,7 @@ section:last-of-type {
   font-size: 80px;
   font-weight: 700;
   line-height: initial;
-  margin-top: 260px;
+  margin-top: 230px;
 }
 .section-title.sub {
   font-size: 44px;
@@ -4432,6 +4437,14 @@ section:last-of-type {
 .section-description {
   font-size: 44px;
   margin-top: 60px;
+}
+.section-ref {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: initial;
+  color: #4a4a4a;
+  margin-top: 60px;
+  text-align: center;
 }
 .section-list {
   margin-top: 80px;
@@ -4545,12 +4558,6 @@ section:last-of-type {
   border-top: 1px solid var(--colors-gray-700);
   text-align: center;
 }
-.section-category--list > ul > li .member .description ul li {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: initial;
-  color: var(--colors-gray-400);
-}
 .section-category--list > ul > li .member .description ul li ~ li {
   margin-top: 20px;
 }
@@ -4588,6 +4595,12 @@ section:last-of-type {
   color: var(--colors-white);
   margin-top: 6px;
 }
+.member .description ul li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: initial;
+  color: var(--colors-gray-400);
+}
 
 .logo {
   width: 116px;
@@ -4619,20 +4632,21 @@ section:last-of-type {
   font-weight: 700;
   line-height: 1.5;
   color: var(--colors-white);
-  width: 232px;
+  width: auto;
   height: 70px;
   background-color: transparent;
   border: 1px solid var(--colors-white);
+  padding: 0 36px;
 }
 .contact-text {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.38;
   color: var(--colors-white);
   text-align: center;
 }
 .contact-title {
-  font-size: 80px;
+  font-size: 54px;
   font-weight: 700;
   color: var(--colors-white);
   text-align: center;
@@ -4700,6 +4714,12 @@ section:last-of-type {
 .swiper {
   margin-top: 60px;
 }
+.swiper .swiper-slide button {
+  background-color: initial;
+}
+.swiper .swiper-slide button:focus-visible {
+  outline-offset: -2px;
+}
 .swiper.mySwiper {
   width: 980px;
   margin: 60px auto 0;
@@ -4710,11 +4730,15 @@ section:last-of-type {
   gap: 20px;
 }
 .swiper.mySwiper .video-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 24px;
   font-weight: 400;
   line-height: initial;
   color: #999999;
   width: 100%;
+  height: 100%;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -4725,7 +4749,7 @@ section:last-of-type {
 .swiper.mySwiper .swiper-slide {
   padding-bottom: initial;
 }
-.swiper.mySwiper .swiper-slide:before {
+.swiper.mySwiper .swiper-slide .swiper-button:before {
   content: "";
   position: absolute;
   top: 0;
@@ -4740,7 +4764,7 @@ section:last-of-type {
 .swiper.mySwiper .swiper-slide img {
   filter: brightness(0.5);
 }
-.swiper.mySwiper .swiper-slide.swiper-slide-thumb-active:before {
+.swiper.mySwiper .swiper-slide.swiper-slide-thumb-active .swiper-button:before {
   border: 4px solid var(--colors-white);
 }
 .swiper.mySwiper .swiper-slide.swiper-slide-thumb-active .video-text {
@@ -4803,6 +4827,10 @@ section:last-of-type {
   }
   .mo {
     display: block;
+  }
+  .space {
+    width: 10px;
+    display: inline-flex;
   }
   header {
     height: 78px;
@@ -4900,6 +4928,12 @@ section:last-of-type {
     padding-right: 0;
     padding-left: 0;
   }
+  section.visual .section-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.26;
+    color: var(--colors-white);
+  }
   section.contact {
     margin-top: 130px;
   }
@@ -4977,6 +5011,12 @@ section:last-of-type {
     padding-bottom: 20px;
     letter-spacing: -0.28px;
   }
+  .section-ref {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: initial;
+    margin-top: 10px;
+  }
   .section-list {
     margin-top: 40px;
   }
@@ -4999,9 +5039,9 @@ section:last-of-type {
     margin-top: 12px;
   }
   .section-list--link {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.6;
     margin-top: 20px;
   }
   .section-category--title {
@@ -5268,7 +5308,7 @@ section:last-of-type {
     max-height: 64px;
     min-height: 64px;
   }
-  .swiper.mySwiper .swiper-slide.swiper-slide-thumb-active:before {
+  .swiper.mySwiper .swiper-slide.swiper-slide-thumb-active .swiper-button:before {
     border: 2px solid var(--colors-white);
   }
   .swiper.mySwiper:after {

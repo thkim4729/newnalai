@@ -258,6 +258,16 @@ function swiperUI() {
     },
   });
 
+  const thumbnails = document.querySelectorAll(
+    ".mySwiper .swiper-slide button"
+  );
+
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      swiper2.slideTo(index);
+    });
+  });
+
   const videoContainers = document.querySelectorAll(".swiper .video-container"); // .kv 제외
 
   videoContainers.forEach((container) => {

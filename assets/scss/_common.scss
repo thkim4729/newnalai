@@ -107,6 +107,7 @@ section {
     }
 
     > .section-title {
+      @include font-set(50px, 400, null, var(--colors-white));
       // margin-top: 260px;
     }
   }
@@ -240,7 +241,7 @@ section {
 
   &-title {
     @include font-set(80px, 700, initial, null);
-    margin-top: 260px;
+    margin-top: 230px;
 
     &.sub {
       @include font-set(44px, 400, 1.13, var(--colors-gray-300));
@@ -252,6 +253,12 @@ section {
     font-size: 44px;
     margin-top: 60px;
     // padding-bottom: 80px;
+  }
+
+  &-ref {
+    @include font-set(26px, 400, initial, #4a4a4a);
+    margin-top: 60px;
+    text-align: center;
   }
 
   &-list {
@@ -369,8 +376,6 @@ section {
 
               ul {
                 li {
-                  @include font-set(16px, 400, initial, var(--colors-gray-400));
-
                   ~ li {
                     margin-top: 20px;
                   }
@@ -419,6 +424,14 @@ section {
       }
     }
   }
+
+  .description {
+    ul {
+      li {
+        @include font-set(16px, 400, initial, var(--colors-gray-400));
+      }
+    }
+  }
 }
 
 .logo {
@@ -451,20 +464,21 @@ section {
   &-button {
     @include flex-box(inline-flex, center, center);
     @include font-set(30px, 700, 1.5, var(--colors-white));
-    width: 232px;
+    width: auto;
     height: 70px;
     // background-color: var(--colors-black);
     background-color: transparent;
     border: 1px solid var(--colors-white);
+    padding: 0 36px;
   }
 
   &-text {
-    @include font-set(20px, 400, 1.1, var(--colors-white));
+    @include font-set(20px, 400, 1.38, var(--colors-white));
     text-align: center;
   }
 
   &-title {
-    @include font-set(80px, 700, null, var(--colors-white));
+    @include font-set(54px, 700, null, var(--colors-white));
     text-align: center;
     margin: 114px auto 52px;
   }
@@ -543,6 +557,16 @@ section {
 .swiper {
   margin-top: 60px;
 
+  .swiper-slide {
+    button {
+      background-color: initial;
+
+      &:focus-visible {
+        outline-offset: -2px;
+      }
+    }
+  }
+
   &.mySwiper {
     width: 980px;
     margin: 60px auto 0;
@@ -554,8 +578,10 @@ section {
     }
 
     .video-text {
+      @include flex-box(flex, center, center);
       @include font-set(24px, 400, initial, #999999);
       width: 100%;
+      height: 100%;
       text-align: center;
       position: absolute;
       top: 50%;
@@ -567,17 +593,19 @@ section {
     .swiper-slide {
       padding-bottom: initial;
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        display: block;
-        width: 100%;
-        height: 100%;
+      .swiper-button {
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
       }
 
       img {
@@ -585,8 +613,10 @@ section {
       }
 
       &.swiper-slide-thumb-active {
-        &:before {
-          border: 4px solid var(--colors-white);
+        .swiper-button {
+          &:before {
+            border: 4px solid var(--colors-white);
+          }
         }
 
         .video-text {
@@ -620,6 +650,7 @@ section {
     }
   }
 }
+
 .video-container {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -663,6 +694,11 @@ section {
 
   .mo {
     display: block;
+  }
+
+  .space {
+    width: 10px;
+    display: inline-flex;
   }
 
   header {
@@ -764,6 +800,12 @@ section {
       padding-left: 0;
     }
 
+    &.visual {
+      .section-title {
+        @include font-set(20px, 400, 1.26, var(--colors-white));
+      }
+    }
+
     &.contact {
       margin-top: 130px;
     }
@@ -853,6 +895,11 @@ section {
       letter-spacing: -0.28px;
     }
 
+    &-ref {
+      @include font-set(11px, 400, initial, null);
+      margin-top: 10px;
+    }
+
     &-list {
       margin-top: 40px;
 
@@ -877,7 +924,7 @@ section {
       }
 
       &--link {
-        @include font-set(17px, 300, 1.4, null);
+        @include font-set(15px, 300, 1.6, null);
         margin-top: 20px;
       }
     }
@@ -1212,8 +1259,10 @@ section {
         min-height: 64px;
 
         &.swiper-slide-thumb-active {
-          &:before {
-            border: 2px solid var(--colors-white);
+          .swiper-button {
+            &:before {
+              border: 2px solid var(--colors-white);
+            }
           }
         }
       }
