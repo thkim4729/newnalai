@@ -4231,11 +4231,11 @@ li {
 }
 
 .pc {
-  display: block;
+  display: block !important;
 }
 
 .mo {
-  display: none;
+  display: none !important;
 }
 
 header {
@@ -4823,10 +4823,10 @@ section:last-of-type {
 
 @media screen and (max-width: 767px) {
   .pc {
-    display: none;
+    display: none !important;
   }
   .mo {
-    display: block;
+    display: block !important;
   }
   .space {
     width: 10px;
