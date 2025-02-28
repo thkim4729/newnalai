@@ -409,10 +409,37 @@ function swiperUI() {
   });
 }
 
+function downloadUI() {
+  function videoDownloadUI() {
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      video.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+      });
+
+      console.log("🚀 ~ videos.forEach ~ video:", video);
+      video.setAttribute("controlsList", "nodownload");
+    });
+  }
+
+  function imageDownloadUI() {
+    const images = document.querySelectorAll("img");
+    images.forEach((image) => {
+      image.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+      });
+    });
+  }
+
+  videoDownloadUI();
+  imageDownloadUI();
+}
+
 function uiInit() {
   headerUI();
   handleResize(); // 초기화시 핸들러 실행
   swiperUI();
+  downloadUI();
 
   if (window.innerWidth < 768) {
     navUI();

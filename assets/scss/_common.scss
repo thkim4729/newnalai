@@ -776,7 +776,7 @@ section {
 
       > .link-10 {
         @include flex-box(flex, center, center);
-        @include font-set(34px, 400, 1.15, var(--colors-gray-650));
+        @include font-set(26px, 400, 1.15, var(--colors-gray-650));
         padding: 0;
         border: 0;
 

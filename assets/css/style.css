@@ -4909,7 +4909,7 @@ section:last-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 34px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 1.15;
     color: var(--colors-gray-650);
