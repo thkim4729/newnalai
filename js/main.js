@@ -416,8 +416,6 @@ function downloadUI() {
       video.addEventListener("contextmenu", (event) => {
         event.preventDefault();
       });
-
-      console.log("🚀 ~ videos.forEach ~ video:", video);
       video.setAttribute("controlsList", "nodownload");
     });
   }
