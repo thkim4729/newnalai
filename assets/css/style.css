@@ -4310,6 +4310,15 @@ section.visual > .section-title {
   font-size: 50px;
   font-weight: 400;
   color: var(--colors-white);
+  text-align: center;
+}
+section.visual > .section-title p {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 80px;
+  text-align: center;
+  background-color: #162b40;
 }
 section.contact {
   margin-top: 300px;
@@ -4933,6 +4942,9 @@ section:last-of-type {
     font-weight: 400;
     line-height: 1.26;
     color: var(--colors-white);
+  }
+  section.visual .section-title p {
+    padding: 8px 36px;
   }
   section.contact {
     margin-top: 130px;

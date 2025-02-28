@@ -108,7 +108,14 @@ section {
 
     > .section-title {
       @include font-set(50px, 400, null, var(--colors-white));
-      // margin-top: 260px;
+      text-align: center;
+
+      p {
+        @include flex-box(inline-flex, center, center);
+        padding: 24px 80px;
+        text-align: center;
+        background-color: #162b40;
+      }
     }
   }
 
@@ -803,6 +810,10 @@ section {
     &.visual {
       .section-title {
         @include font-set(20px, 400, 1.26, var(--colors-white));
+
+        p {
+          padding: 8px 36px;
+        }
       }
     }
 
