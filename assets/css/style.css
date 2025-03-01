@@ -4487,7 +4487,7 @@ section:last-of-type {
 }
 .section-list--link:after {
   content: "";
-  background: url(/assets/images/icon/solar_arrow-up-linear.svg) no-repeat center/cover;
+  background: url(../images/icon/solar_arrow-up-linear.svg) no-repeat center/cover;
   width: 22px;
   height: 22px;
   margin-left: 6px;
@@ -4841,17 +4841,17 @@ section:last-of-type {
 }
 
 .playPause.play {
-  background-image: url(/assets/images/icon/play.svg);
+  background-image: url(../images/icon/play.svg);
 }
 .playPause.pause {
-  background-image: url(/assets/images/icon/pause.svg);
+  background-image: url(../images/icon/pause.svg);
 }
 
 .muteButton.unmuted {
-  background-image: url(/assets/images/icon/unmuted.svg);
+  background-image: url(../images/icon/unmuted.svg);
 }
 .muteButton.muted {
-  background-image: url(/assets/images/icon/muted.svg);
+  background-image: url(../images/icon/muted.svg);
 }
 
 @media screen and (max-width: 767px) {
@@ -5204,11 +5204,11 @@ section:last-of-type {
     height: 24px;
     margin-left: 16px;
     padding: 0;
-    background: url(/assets/images/icon/menu-solid.svg) center/cover;
+    background: url(../images/icon/menu-solid.svg) center/cover;
   }
   .menu-button.w--open {
     padding-left: 0;
-    background: url(/assets/images/icon/close-solid.svg) center/cover;
+    background: url(../images/icon/close-solid.svg) center/cover;
   }
   .menu-button:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
@@ -5276,7 +5276,7 @@ section:last-of-type {
     border-top: 0;
   }
   .accordionBox.on .accordionButton:after {
-    background: url(/assets/images/icon/ep_arrow-up.png) no-repeat center/cover;
+    background: url(../images/icon/ep_arrow-up.png) no-repeat center/cover;
   }
   .accordionBox .member .profile {
     padding-bottom: 0;
@@ -5329,7 +5329,7 @@ section:last-of-type {
     transform: translate(0, -50%);
     width: 35px;
     height: 35px;
-    background: url(/assets/images/icon/ep_arrow-down.png) no-repeat center/cover;
+    background: url(../images/icon/ep_arrow-down.png) no-repeat center/cover;
   }
   .swiper {
     margin-top: 10px;

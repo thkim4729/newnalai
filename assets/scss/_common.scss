@@ -297,7 +297,7 @@ section {
 
       &:after {
         content: "";
-        background: url(/assets/images/icon/solar_arrow-up-linear.svg) no-repeat
+        background: url(../images/icon/solar_arrow-up-linear.svg) no-repeat
           center/cover;
         width: 22px;
         height: 22px;
@@ -702,21 +702,21 @@ section {
 
 .playPause {
   &.play {
-    background-image: url(/assets/images/icon/play.svg);
+    background-image: url(../images/icon/play.svg);
   }
 
   &.pause {
-    background-image: url(/assets/images/icon/pause.svg);
+    background-image: url(../images/icon/pause.svg);
   }
 }
 
 .muteButton {
   &.unmuted {
-    background-image: url(/assets/images/icon/unmuted.svg);
+    background-image: url(../images/icon/unmuted.svg);
   }
 
   &.muted {
-    background-image: url(/assets/images/icon/muted.svg);
+    background-image: url(../images/icon/muted.svg);
   }
 }
 
@@ -1119,11 +1119,11 @@ section {
     height: 24px;
     margin-left: 16px;
     padding: 0;
-    background: url(/assets/images/icon/menu-solid.svg) center/cover;
+    background: url(../images/icon/menu-solid.svg) center/cover;
 
     &.w--open {
       padding-left: 0;
-      background: url(/assets/images/icon/close-solid.svg) center/cover;
+      background: url(../images/icon/close-solid.svg) center/cover;
     }
 
     &:focus-visible {
@@ -1209,8 +1209,8 @@ section {
       &.on {
         .accordionButton {
           &:after {
-            background: url(/assets/images/icon/ep_arrow-up.png) no-repeat
-              center / cover;
+            background: url(../images/icon/ep_arrow-up.png) no-repeat center /
+              cover;
           }
         }
       }
@@ -1281,7 +1281,7 @@ section {
         transform: translate(0, -50%);
         width: 35px;
         height: 35px;
-        background: url(/assets/images/icon/ep_arrow-down.png) no-repeat center /
+        background: url(../images/icon/ep_arrow-down.png) no-repeat center /
           cover;
       }
     }
