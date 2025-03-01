@@ -4318,6 +4318,7 @@ section.visual > .section-title p {
   align-items: center;
   padding: 24px 80px;
   text-align: center;
+  background-color: #162b40;
 }
 section.contact {
   margin-top: 300px;
@@ -4328,14 +4329,6 @@ section:last-of-type {
 
 .kv {
   position: relative;
-}
-.kv .playPause {
-  width: 60px;
-  height: 60px;
-  right: 0;
-  bottom: 0;
-  top: initial;
-  left: initial;
 }
 
 .table {
@@ -4798,6 +4791,14 @@ section:last-of-type {
   position: absolute;
   object-fit: cover;
 }
+.swiper.mySwiper2 .video-container .playPause {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+}
 
 .video-container {
   overflow: hidden;
@@ -4813,20 +4814,44 @@ section:last-of-type {
   position: absolute;
 }
 
-.playPause {
+.video-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140px;
-  height: 140px;
-  text-indent: -9999px;
+  left: 36px;
+  bottom: 26px;
 }
+.video-indicator .playPause,
+.video-indicator .muteButton {
+  min-width: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  max-height: 48px;
+}
+
+.playPause,
+.muteButton {
+  text-indent: -9999px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
 .playPause.play {
-  background: url(/assets/images/icon/play.svg) no-repeat center/cover;
+  background-image: url(/assets/images/icon/play.svg);
 }
 .playPause.pause {
-  background: url(/assets/images/icon/pause.svg) no-repeat center/cover;
+  background-image: url(/assets/images/icon/pause.svg);
+}
+
+.muteButton.unmuted {
+  background-image: url(/assets/images/icon/unmuted.svg);
+}
+.muteButton.muted {
+  background-image: url(/assets/images/icon/muted.svg);
 }
 
 @media screen and (max-width: 767px) {
@@ -5371,5 +5396,17 @@ section:last-of-type {
     height: 100%;
     width: 100%;
     position: absolute;
+  }
+  .video-indicator {
+    gap: 6px;
+    bottom: 8px;
+    left: 10px;
+  }
+  .video-indicator .playPause,
+  .video-indicator .muteButton {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
   }
 }/*# sourceMappingURL=style.css.map */
