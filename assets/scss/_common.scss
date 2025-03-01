@@ -114,7 +114,7 @@ section {
         @include flex-box(inline-flex, center, center);
         padding: 24px 80px;
         text-align: center;
-        background-color: #162b40;
+        // background-color: #162b40;
       }
     }
   }
@@ -1287,7 +1287,7 @@ section {
       }
 
       &:after {
-        content: "";
+        content: none;
         position: absolute;
         right: 0;
         top: 0;

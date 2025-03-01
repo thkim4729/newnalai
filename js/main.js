@@ -268,145 +268,154 @@ function swiperUI() {
     });
   });
 
-  const videoContainers = document.querySelectorAll(".swiper .video-container"); // .kv 제외
+  function swiperVideo() {
+    const videoContainers = document.querySelectorAll(
+      ".swiper .video-container"
+    ); // .kv 제외
 
-  videoContainers.forEach((container) => {
-    const video = container.querySelector("video");
+    videoContainers.forEach((container) => {
+      const video = container.querySelector("video");
 
-    function createPlayPauseButton(container) {
-      const button = document.createElement("button");
-      button.classList.add("playPause", "play");
-      button.setAttribute("aria-label", "재생");
-      container.insertAdjacentElement("beforeend", button);
-      return button;
-    }
+      function createPlayPauseButton(container) {
+        const button = document.createElement("button");
+        button.classList.add("playPause", "play");
+        button.setAttribute("aria-label", "재생");
+        container.insertAdjacentElement("beforeend", button);
+        return button;
+      }
 
-    const playPauseButton = createPlayPauseButton(container);
+      const playPauseButton = createPlayPauseButton(container);
 
-    playPauseButton.style.transition = "opacity 0.5s ease-in-out";
+      playPauseButton.style.transition = "opacity 0.5s ease-in-out";
 
-    if (video.autoplay) {
-      playPauseButton.classList.remove("play");
-      playPauseButton.classList.add("pause");
-      playPauseButton.style.opacity = 1;
-      playPauseButton.setAttribute("aria-label", "일시정지");
-    }
+      if (video.autoplay) {
+        playPauseButton.classList.remove("play");
+        playPauseButton.classList.add("pause");
+        playPauseButton.style.opacity = 1;
+        playPauseButton.setAttribute("aria-label", "일시정지");
+      }
 
-    playPauseButton.addEventListener("click", () => {
-      toggleVideoPlayback(video, playPauseButton);
-    });
+      playPauseButton.addEventListener("click", () => {
+        toggleVideoPlayback(video, playPauseButton);
+      });
 
-    video.addEventListener("click", () => {
-      if (!container.classList.contains("kv")) {
-        if (playPauseButton.style.opacity === "1") {
-          playPauseButton.style.opacity = 0;
-        } else if (
-          playPauseButton.style.opacity === "0" ||
-          playPauseButton.style.opacity === ""
-        ) {
+      video.addEventListener("click", () => {
+        if (!container.classList.contains("kv")) {
+          if (playPauseButton.style.opacity === "1") {
+            playPauseButton.style.opacity = 0;
+          } else if (
+            playPauseButton.style.opacity === "0" ||
+            playPauseButton.style.opacity === ""
+          ) {
+            playPauseButton.style.opacity = 1;
+          }
+        }
+      });
+
+      video.addEventListener("ended", () => {
+        playPauseButton.classList.remove("pause");
+        playPauseButton.classList.add("play");
+        playPauseButton.style.opacity = 1;
+      });
+
+      function toggleVideoPlayback(video, playPauseButton) {
+        if (video.paused) {
+          video.play();
+          playPauseButton.classList.remove("play");
+          playPauseButton.classList.add("pause");
+          playPauseButton.setAttribute("aria-label", "일시정지");
+          setTimeout(() => {
+            playPauseButton.style.opacity = 0;
+          }, 3000);
+        } else {
+          video.pause();
+          playPauseButton.classList.remove("pause");
+          playPauseButton.classList.add("play");
+          playPauseButton.setAttribute("aria-label", "재생");
           playPauseButton.style.opacity = 1;
         }
       }
     });
 
-    video.addEventListener("ended", () => {
-      playPauseButton.classList.remove("pause");
-      playPauseButton.classList.add("play");
-      playPauseButton.style.opacity = 1;
+    // 메인 슬라이더 변경 이벤트 리스너
+    swiper2.on("slideChange", () => {
+      pauseOtherVideos(swiper2.activeIndex);
     });
 
-    function toggleVideoPlayback(video, playPauseButton) {
-      if (video.paused) {
-        video.play();
+    // 썸네일 슬라이드 클릭 이벤트 리스너
+    swiper.on("click", (swiper, event) => {
+      swiper2.slideTo(swiper.clickedIndex);
+      pauseOtherVideos(swiper.clickedIndex);
+    });
+
+    // 다른 비디오 일시 정지 함수
+    function pauseOtherVideos(activeIndex) {
+      videoContainers.forEach((container, index) => {
+        const video = container.querySelector("video");
+        if (video && index !== activeIndex) {
+          video.pause();
+          const playPauseButton = container.querySelector(".playPause");
+          if (playPauseButton) {
+            playPauseButton.classList.remove("pause");
+            playPauseButton.classList.add("play");
+            playPauseButton.style.opacity = 1;
+          }
+        }
+      });
+    }
+  }
+
+  function kvVideo() {
+    // .kv 비디오 로직 분리
+    const kvContainers = document.querySelectorAll(".kv .video-container");
+
+    kvContainers.forEach((container) => {
+      const video = container.querySelector("video");
+
+      // 플레이 버튼 동적 생성
+      const playPauseButton = document.createElement("button");
+      playPauseButton.classList.add("playPause", "play");
+      playPauseButton.setAttribute("aria-label", "재생");
+      container.insertAdjacentElement("beforeend", playPauseButton);
+
+      // CSS 트랜지션 추가
+      playPauseButton.style.transition = "opacity 0.5s ease-in-out";
+
+      // 자동 재생 설정 확인 및 버튼 상태 설정
+      if (video.autoplay) {
         playPauseButton.classList.remove("play");
         playPauseButton.classList.add("pause");
+        playPauseButton.style.opacity = 1;
         playPauseButton.setAttribute("aria-label", "일시정지");
-        setTimeout(() => {
-          playPauseButton.style.opacity = 0;
-        }, 3000);
-      } else {
-        video.pause();
+      }
+
+      playPauseButton.addEventListener("click", () => {
+        toggleVideoPlayback(video, playPauseButton);
+      });
+
+      video.addEventListener("ended", () => {
         playPauseButton.classList.remove("pause");
         playPauseButton.classList.add("play");
-        playPauseButton.setAttribute("aria-label", "재생");
-        playPauseButton.style.opacity = 1;
-      }
-    }
-  });
+      });
 
-  // 메인 슬라이더 변경 이벤트 리스너
-  swiper2.on("slideChange", () => {
-    pauseOtherVideos(swiper2.activeIndex);
-  });
-
-  // 썸네일 슬라이드 클릭 이벤트 리스너
-  swiper.on("click", (swiper, event) => {
-    swiper2.slideTo(swiper.clickedIndex);
-    pauseOtherVideos(swiper.clickedIndex);
-  });
-
-  // 다른 비디오 일시 정지 함수
-  function pauseOtherVideos(activeIndex) {
-    videoContainers.forEach((container, index) => {
-      const video = container.querySelector("video");
-      if (video && index !== activeIndex) {
-        video.pause();
-        const playPauseButton = container.querySelector(".playPause");
-        if (playPauseButton) {
+      function toggleVideoPlayback(video, playPauseButton) {
+        if (video.paused) {
+          video.play();
+          playPauseButton.classList.remove("play");
+          playPauseButton.classList.add("pause");
+          playPauseButton.setAttribute("aria-label", "일시정지");
+        } else {
+          video.pause();
           playPauseButton.classList.remove("pause");
           playPauseButton.classList.add("play");
-          playPauseButton.style.opacity = 1;
+          playPauseButton.setAttribute("aria-label", "재생");
         }
       }
     });
   }
 
-  // .kv 비디오 로직 분리
-  const kvContainers = document.querySelectorAll(".kv");
-
-  kvContainers.forEach((container) => {
-    const video = container.querySelector("video");
-
-    // 플레이 버튼 동적 생성
-    const playPauseButton = document.createElement("button");
-    playPauseButton.classList.add("playPause", "play");
-    playPauseButton.setAttribute("aria-label", "재생");
-    container.insertAdjacentElement("beforeend", playPauseButton);
-
-    // CSS 트랜지션 추가
-    playPauseButton.style.transition = "opacity 0.5s ease-in-out";
-
-    // 자동 재생 설정 확인 및 버튼 상태 설정
-    if (video.autoplay) {
-      playPauseButton.classList.remove("play");
-      playPauseButton.classList.add("pause");
-      playPauseButton.style.opacity = 1;
-      playPauseButton.setAttribute("aria-label", "일시정지");
-    }
-
-    playPauseButton.addEventListener("click", () => {
-      toggleVideoPlayback(video, playPauseButton);
-    });
-
-    video.addEventListener("ended", () => {
-      playPauseButton.classList.remove("pause");
-      playPauseButton.classList.add("play");
-    });
-
-    function toggleVideoPlayback(video, playPauseButton) {
-      if (video.paused) {
-        video.play();
-        playPauseButton.classList.remove("play");
-        playPauseButton.classList.add("pause");
-        playPauseButton.setAttribute("aria-label", "일시정지");
-      } else {
-        video.pause();
-        playPauseButton.classList.remove("pause");
-        playPauseButton.classList.add("play");
-        playPauseButton.setAttribute("aria-label", "재생");
-      }
-    }
-  });
+  swiperVideo();
+  kvVideo();
 }
 
 function downloadUI() {

@@ -4318,7 +4318,6 @@ section.visual > .section-title p {
   align-items: center;
   padding: 24px 80px;
   text-align: center;
-  background-color: #162b40;
 }
 section.contact {
   margin-top: 300px;
@@ -5329,7 +5328,7 @@ section:last-of-type {
     border: 2px solid var(--colors-white);
   }
   .swiper.mySwiper:after {
-    content: "";
+    content: none;
     position: absolute;
     right: 0;
     top: 0;
